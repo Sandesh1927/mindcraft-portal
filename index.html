@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Mindcraft Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0a0c14">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo">MINDCRAFT</div>
+            <h1>Employee Portal</h1>
+            <p class="subtitle">Quick access to company tools</p>
+        </header>
+
+        <main class="dashboard">
+            <a href="https://hrms.mindcraft.in/SpineHRMS/login.aspx?ReturnUrl=%2fSpineHRMS" class="card" id="hrms-card">
+                <div class="card-glass"></div>
+                <div class="card-content">
+                    <div class="icon-wrapper">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                    </div>
+                    <h3>Mindcraft HRMS</h3>
+                    <p>Attendance & Salary</p>
+                </div>
+                <div class="card-glare"></div>
+            </a>
+
+            <a href="https://mindcraft.icewarpcloud.in/webmail/" class="card" id="mail-card">
+                <div class="card-glass"></div>
+                <div class="card-content">
+                    <div class="icon-wrapper">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                    </div>
+                    <h3>Webmail</h3>
+                    <p>Company Email</p>
+                </div>
+                <div class="card-glare"></div>
+            </a>
+        </main>
+
+        <footer>
+            <div class="status">
+                <span class="status-dot"></span>
+                Mindcraft Systems Active
+            </div>
+        </footer>
+    </div>
+
+    <!-- AI Chatbot UI -->
+    <div id="chatbot-container" class="hidden">
+        <div class="chatbot-header">
+            <h3>Mindcraft AI</h3>
+            <button id="close-chatbot">&times;</button>
+        </div>
+        <div id="chatbot-messages">
+            <div class="message bot">Hello! I'm your Mindcraft Assistant. How can I help you today?</div>
+        </div>
+        <div class="chatbot-input">
+            <input type="text" id="user-input" placeholder="Ask about HRMS, Mail...">
+            <button id="send-msg">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+            </button>
+        </div>
+    </div>
+
+    <button id="chatbot-toggle" title="Ask Mindcraft AI">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </button>
+
+    <script src="main.js"></script>
+</body>
+</html>

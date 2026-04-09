@@ -1,0 +1,29 @@
+name: Build Android APK (PWABuilder)
+
+on:
+  push:
+    branches: ["main", "master"]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build APK via PWABuilder
+        uses: pwa-builder/pwa-action@v1
+        with:
+          url: https://Sandesh1927.github.io/mindcraft-portal/
+          name: "Mindcraft Assistant"
+          android_package_id: "com.mindcraft.portal"
+          
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        if: startsWith(github.ref, 'refs/tags/')
+        with:
+          files: |
+            *.apk
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
